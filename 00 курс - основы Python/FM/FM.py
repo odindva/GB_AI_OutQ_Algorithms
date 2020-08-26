@@ -1,4 +1,4 @@
-from core import changeDir, getHelp, createF, createD, getList, deleteFD, copyFD
+from core import change_dir, get_help, create_f, create_d, get_list, delete_fd, copy_fd
 import sys
 import Games.findNumber
 import Games.findCompNumber
@@ -36,41 +36,41 @@ except IndexError:
 if isCommand:
     if command == 'list':
         if param1 == 'folders':
-            getList(foldersOnly=True)
+            get_list(foldersOnly=True)
         else:
-            getList()
+            get_list()
 
     elif command == 'createF':
         if param1:
-            createF(param1)
+            create_f(param1)
         else:
             print('введите имя файла\n')
-            getHelp()
+            get_help()
 
     elif command == 'createD':
         if param1:
-            createD(param1)
+            create_d(param1)
         else:
             print('введите имя файла\n')
-            getHelp()
+            get_help()
 
     elif command == 'deleteFD':
         try:
             if param1:
-                deleteFD(param1)
+                delete_fd(param1)
             else:
                 print('введите имя файла\n')
-                getHelp()
+                get_help()
         except FileNotFoundError:
             print('Файл не найден')
 
     elif command == 'copyFD':
         if not param1 or not param2:
             print('введите копируемый и новый файлы')
-            getHelp()
+            get_help()
         else:
             try:
-                copyFD(param1, param2)
+                copy_fd(param1, param2)
             except FileNotFoundError:
                 print('Файл не найден')
 
@@ -86,14 +86,14 @@ if isCommand:
 
     elif command == 'cd':
         if param1:
-            changeDir(param1)
+            change_dir(param1)
         else:
             print('введите дирректорию для перехода\n')
-            getHelp()
+            get_help()
 
 
     elif command == 'help':
-        getHelp()
+        get_help()
 else:
     print('введите команду\n')
-    getHelp()
+    get_help()
